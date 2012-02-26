@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(:version => 50) do
   create_table "votes", :force => true do |t|
     t.integer  "voter"
     t.integer  "votable"
-    t.string   "direction"
+    t.boolean  "positive"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
