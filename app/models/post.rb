@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-  belongs_to :poster
+  belongs_to :poster, :polymorphic => true
+
   has_many :votes, :as => :votable
   has_many :comments
 
@@ -8,6 +9,11 @@ class Post < ActiveRecord::Base
 
   def to_s
     self.title
+  end
+
+  # TODO: This should check for time expiration
+  def editable?
+    true
   end
 
   def ensure_url_xor_body

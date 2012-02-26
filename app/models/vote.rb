@@ -1,7 +1,6 @@
 class Vote < ActiveRecord::Base
-  def positive?
-    self.direction == "up"
-  end
+  belongs_to :voter,   :polymorphic => true
+  belongs_to :votable, :polymorphic => true
 
   def negative?
     !self.positive
