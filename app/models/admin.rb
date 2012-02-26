@@ -1,8 +1,11 @@
 class Admin < ActiveRecord::Base
   has_many :posts, :as => :owner
   has_many :votes, :as => :voter
+  has_many :comments, :as => :author
 
   validates_presence_of :ido_id
+
+  before_validation Proc.new { |user| user.points ||= 1 }
 
   def bushido_extra_attributes(extra_attributes)
     self.first_name = extra_attributes["first_name"].to_s

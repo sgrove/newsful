@@ -1,2 +1,2 @@
-<%= comment.points %><%= comment.author %> <%= time_ago_in_words(comment.created_at) %> ago<br />
+(<%= pluralize comment.points, "point" %>)  <%= comment.author %> <%= time_ago_in_words(comment.created_at) %> ago<br />
 <%= comment.body %>

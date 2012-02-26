@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   before_validation :ensure_url_xor_body
-  before_validation Proc.new { |post| post.points ||= 0 }
+  before_validation Proc.new { |post| post.points ||= 1 }
 
   def to_s
     self.title

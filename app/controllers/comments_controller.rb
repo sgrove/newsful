@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @post = Post.find_by_id(params[:post_id])
-    @comments = @post.comments.all
+    @user = User.find_by_id(params[:user_id])
+    @comments = @user.comments.all
 
     respond_to do |format|
       format.html # index.html.erb

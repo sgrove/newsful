@@ -6,5 +6,11 @@ Newsful::Application.routes.draw do
 
   devise_for :users, :admins
 
+  resources :users do
+    resources :comments
+  end
+
+  resources :comments
+
   root :to => 'posts#index'
 end
