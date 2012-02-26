@@ -1,4 +1,4 @@
-Comicomi::Application.routes.draw do
+Newsful::Application.routes.draw do
   resources :votes
   resources :posts do 
     resources :comments

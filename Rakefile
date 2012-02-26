@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Comicomi::Application.load_tasks
+Newsful::Application.load_tasks
