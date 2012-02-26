@@ -4,9 +4,6 @@
   <tr>
     <th>Points</th>
     <th>Title</th>
-    <th>Url</th>
-    <th>Poster</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -14,16 +11,17 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.points %></td>
-    <td><%= post.title %></td>
-    <td><%= post.url %></td>
-    <td><%= post.poster %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to post.title, post %> (<%= post.url %>) [<%= post.poster %>]
+    <% if post.posted_by?(current_user) %>
+      <% if post.editable? %>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <% end %>
     <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'Submit', new_post_path %>
