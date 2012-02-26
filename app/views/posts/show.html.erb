@@ -8,6 +8,15 @@
 
 <% if !@post.body.blank? %><p><%= @post.body %></p><% end %>
 
+
+<% if !current_user %>
+  <h3>comment</h3>
+  <%= render :partial => 'comments/form', :locals => {:comment => Comment.new(:post_id => @post.id)} %>
+<% else %>
+  Please login to comment
+<% end %>
+  
+
 <h2>Comments</h2>
 <% for comment in @post.comments %>
   <%= render :partial => "comments/comment", :locals => {:comment => comment} %>
