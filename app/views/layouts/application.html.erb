@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Komikomi</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='navbar'>
+        <div class='user-nav'><%= link_to "Komikomi", posts_url %></div>
+        <div class='brand'>
+        </div>
+        <div class='user-nav'>
+        </div>
+      </div>
+      <div class='ticket-nav'>
+      </div>
+      <div class='search-wrapper'></div>
+      <div class='main'>
+        <%= yield %>
+      </div>
+      <div class='sidebar'>
+        <div class='content'>
+          Sidebar
+        </div>
+      </div>
+      <div class='container-footer'></div>
+    </div>
+    <div class='footer'>
+      Footer
+    </div>
+  </body>
+</html>

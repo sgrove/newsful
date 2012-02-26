@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<strong><%= @post.title %></strong><% if !@post.url.blank? %>  (<%= @post.url %>)<% end %><br />
+
+<% if @post.posted_by?(current_user) %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
+
+
+<% if !@post.body.blank? %><p><%= @post.body %></p><% end %>
+
+<h2>Comments</h2>
+<% for comment in @post.comments %>
+  <%= render :partial => "comments/comment", :locals => {:comment => comment} %>
+<% end %>

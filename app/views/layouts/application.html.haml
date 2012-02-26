@@ -1,0 +1,53 @@
+!!!
+%html
+  %head
+    %title VoicedOpen
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  
+    - if @operating_user
+      :javascript
+        $(document).ready(function(){
+          $.data(document, 'user', {scope: "#{@operating_user.class.name}", id: #{@operating_user.id || "null"}})
+        })
+
+    = yield :head
+
+  %body
+    .container
+      .navbar
+        .brand
+          =link_to "VoicedOpen", "#", :class => "brand-name"
+          - if not (user_signed_in? || admin_signed_in?)
+            =link_to "Have something to say? Login here", new_user_session_path, :class => "new-ticket-link"
+          - else
+            =link_to "Have something to say?", root_path(:anchor => "tickets/new"), :class => "new-ticket-link"
+
+        .user-nav
+          - if admin_signed_in?
+            = link_to current_admin.email, edit_user_registration_path
+            = link_to "Logout", destroy_admin_session_path, :method => :delete
+          - elsif user_signed_in?
+            = link_to current_user.email, edit_user_registration_path
+            = link_to "Logout", destroy_user_session_path, :method => :delete
+          - else
+            = link_to "Login", new_user_session_path
+            \/
+            = link_to "Sign up", new_user_registration_path
+            = link_to "admin", new_admin_session_path
+
+      .ticket-nav
+        = link_to "Open tickets",   root_path(:anchor => "tickets/open"),   :class=>"open-tickets"
+        = link_to "Closed tickets", root_path(:anchor => "tickets/closed"), :class=>"closed-tickets"
+      .search-wrapper
+
+      .main
+        = yield
+
+      .sidebar
+        .content
+          Here goes the site's sidebar
+      .container-footer
+    .footer
+      this is the footer

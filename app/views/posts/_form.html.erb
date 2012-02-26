@@ -1,0 +1,24 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <p>A post can only have a url <em>(x)or</em> a body</p>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br />
+    <%= f.label :url %>
+    <%= f.text_field :url %><br />
+    <%= f.label :body %>
+    <%= f.text_field :body %><br />
+    <%= f.submit %>
+  </div>
+<% end %>
