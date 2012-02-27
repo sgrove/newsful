@@ -13,7 +13,8 @@
       %h4
         = link_to post.title, post
         - if !post.url.blank?
-          (#{post.url})
+          %span.post-url
+            (#{post.url})
       %p
         #{post.points} points by #{link_to post.poster, post.poster}, #{time_ago_in_words(post.created_at)} ago
     .span2
