@@ -1,0 +1,36 @@
+---
+APP_TLD: noshido.com
+BUNDLE_WITHOUT: !!null 
+BUSHIDO_APP: rooted-cha-9460
+BUSHIDO_APP_KEY: 4553f4f0-1614-012f-6b51-080027706aa2
+BUSHIDO_DOMAIN: rooted-cha-9460.noshido.com
+BUSHIDO_EVENTS: ! '[]'
+BUSHIDO_HOST: noshido.com
+BUSHIDO_NAME: rooted-cha-9460
+BUSHIDO_PROJECT_NAME: tane
+BUSHIDO_SALT: ekfai1YYoa8yfOCi9700q3HmUPcAPYLbSmWP2sgGr82mlp2INQbjt7mc2PcUlB3F
+BUSHIDO_SUBDOMAIN: rooted-cha-9460
+B_SQL_DB: tane_4
+B_SQL_PASS: vagrant
+B_SQL_USER: vagrant
+DATABASE_URL: !!null 
+HOSTING_PLATFORM: bushido
+LANG: !!null
+MONGODB_URL: "mongodb://errbit_dummy_app_29998:a811526b7e8d0130d0e3fafe50703b84233a0ce9@mongo-1.bushi.do:27017/087dd5e0-3f3c-012f-57e2-7efdade69cda"
+PUBLIC_URL: http://rooted-cha-9460.gobushido.com
+RACK_ENV: !!null 
+RAILS_ENV: development
+S3_ACCESS_KEY_ID: ASIAJLWPSCPCCWWZRQSA
+S3_ARN: arn:aws:sts::269591306997:federated-user/rooted-cha-9460
+S3_BUCKET: development.bulk.bushido-dev
+SHARED_DATABASE_URL: !!null 
+S3_PREFIX: rooted-cha-9460
+S3_SECRET_ACCESS_KEY: SJzQh/QN3PovsLw/upP8nX800GXftbW/qmGfMi4Q
+STS_SESSION_TOKEN: AQoDYXdzEMb//////////wEa4ARdH/CVtOciSqTXSsxETle7H3c29mfFOQjl+zw78wyCN2w5Yq7F9jn2wM7OlFZBemJ7/HGhmaWn3xDlv3yfMxmFVJ91bYUvUlKAf4VZjxx+YkT6gK6QppXJqOZzHbJeRUtztWR0aq17YMyYWN+viPvhu+aIqP0MhxaCJvYFhAULDKvKEuXr8nZOOjXOnu7+4we1AamZ/0rxjhyrRZENnAuz0n1DP9tleEURLKbEr+NYxGP2x/x7s/UHoot3KRxChMqut1nwMjWVrBRulHj5zbvNwBRo9mQIhJWxGD2AXP6d2tyQ3xMEO/4JMOxpUxQDG/SzOGMdhMgOSn0yDk0cCSfR7KqwGNLal94WIbwkBhwcVBD+DJgLiSXmH7n5nckdnakbvaGBdOmQuFMgLk7KIbliG8GAY4nJkgEizpud/uVuY0wB5qCrJfWn5B6RPk8mLdnh8dTrz5sf1KVSkxk4XR6Ic/9Mz2T2eBUTAVoetWeE76zYw5P34i+s6bB00UQvtp6S41Q9Lh08RTfS95wxFtOmOLNmDRS1zX3kJbcmjWQVZ+r+vK4tNXtckaLzvHqdQOWOhwWPkrm/DHBSU+7FY/Qu3IahC0ytcC6OBoje9I/CBrxjj6V6DahGtWgi+EbL4T7P9xQ3Hsb5OOvKhNNzJDSZaJ/5KYEg/UywWF5VADGkkQlGFOjvpChZaD78p1tMthNm0mpc4W5h9z8tGvuQPKA71lNry+in8BMZWt2+EQ9aeqVjqMELFwzNU9XY+s5Wx9rgpLhxIAr3ZSz44U83GIRcoovVv2Pfr6Zuj7B2dUrpqyD85/33BA==
+SMTP_AUTHENTICATION: plain
+SMTP_DOMAIN: rooted-cha-9460.gobushido.com
+SMTP_PASSWORD: ekfai1YYoa8yfOCi9700q3HmUPcAPYLb
+SMTP_PORT: '25'
+SMTP_SERVER: smtp.mailgun.org
+SMTP_TLS: 'true'
+SMTP_USER: postmaster@rooted-cha-9460.gobushido.com
