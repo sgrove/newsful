@@ -1,17 +1,92 @@
-/* line 1, ../../app/assets/stylesheets/base.scss */
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+/*
+Syntax error: Undefined mixin 'border-radius'.
+        on line 15 of /Users/Sacha/github/newsful/app/assets/stylesheets/base.scss, in `border-radius'
+        from line 15 of /Users/Sacha/github/newsful/app/assets/stylesheets/base.scss
 
-/* line 8, ../../app/assets/stylesheets/base.scss */
-body {
-  background-color: #ddd !important;
-}
+10: 	background-color:#ddd !important;
+11: }
+12: #main{
+13: 	background:#fff;
+14: 	padding:20px;
+15: 	@include border-radius(3px);
+16: }
 
-/* line 11, ../../app/assets/stylesheets/base.scss */
-#main {
-  background: #fff;
-  padding: 20px;
-}
+Backtrace:
+/Users/Sacha/github/newsful/app/assets/stylesheets/base.scss:15:in `border-radius'
+/Users/Sacha/github/newsful/app/assets/stylesheets/base.scss:15
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:170:in `visit_mixin'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:238:in `visit_rule'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/tree/root_node.rb:20:in `render'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/engine.rb:299:in `_render'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/engine.rb:247:in `block in render'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/util.rb:310:in `silence_sass_warnings'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/engine.rb:247:in `render'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:339:in `update_stylesheet'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:202:in `block in update_stylesheets'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:200:in `each'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:200:in `update_stylesheets'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.15/lib/sass/plugin/rack.rb:51:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/warden-1.1.1/lib/warden/manager.rb:35:in `block in call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/warden-1.1.1/lib/warden/manager.rb:34:in `catch'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/warden-1.1.1/lib/warden/manager.rb:34:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/etag.rb:23:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/conditionalget.rb:25:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/flash.rb:247:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/cookies.rb:331:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.3/lib/active_record/query_cache.rb:64:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.1.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/sendfile.rb:101:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.3/lib/rails/rack/logger.rb:13:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/methodoverride.rb:24:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/runtime.rb:17:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.1.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/lock.rb:15:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.3/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.3/lib/rails/engine.rb:456:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/content_length.rb:14:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.1.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/Sacha/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.3.6/lib/rack/handler/webrick.rb:59:in `service'
+/Users/Sacha/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/Sacha/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/Sacha/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'border-radius'.\A         on line 15 of /Users/Sacha/github/newsful/app/assets/stylesheets/base.scss, in `border-radius'\A         from line 15 of /Users/Sacha/github/newsful/app/assets/stylesheets/base.scss\A \A 10: 	background-color:#ddd !important;\A 11: }\A 12: #main{\A 13: 	background:#fff;\A 14: 	padding:20px;\A 15: 	@include border-radius(3px);\A 16: }"; }

@@ -1,0 +1,36 @@
+@mixin nav-ul {
+	list-style-type:none;
+	overflow:hidden;
+	& li{
+		display:block;
+		float:left;
+	}
+}
+@mixin hide-text{
+	overflow:hidden;
+	text-indent:-9000px;
+	display:block;
+}
+@mixin light-pattern{
+	background:$lightbeige url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANUlEQVQYGWM4evBg/f///xkIYUaQAmIAEyFFxw4dqgepodxEmEkwG8k3Ed0k8k3EZRLJJgIACWs3zlQbQPIAAAAASUVORK5CYII=");
+}
+@function black($opacity){
+	@return rgba(0,0,0,$opacity)
+}
+@function white($opacity){
+	@return rgba(255,255,255,$opacity)
+}
+@mixin letterpress($opacity){
+	text-shadow:white($opacity) 0 1px 0;
+}
+@mixin box-emboss($opacity, $opacity2){
+	box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+@mixin stripes{
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKklEQVQIHWP8//8/w5VD2/8zAIGOnScjEzIHJMgEkwHRIElGkBYYB0QDAAkQFU3J6bOAAAAAAElFTkSuQmCC");
+}
+@mixin photo3d{
+	@include box-shadow(0 1px 0px 0px #444,0 3px 0px 0px #333, 0 5px 2px 0px black(0.25), inset 0 2px 0 white(0.8));
+	border:1px solid black(0.6);
+	@include border-radius(3px);
+}
