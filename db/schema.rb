@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 50) do
     t.text     "about"
     t.string   "locale"
     t.string   "timezone"
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,8 +82,10 @@ ActiveRecord::Schema.define(:version => 50) do
   add_index "users", ["ido_id"], :name => "index_users_on_ido_id", :unique => true
 
   create_table "votes", :force => true do |t|
-    t.integer  "voter"
-    t.integer  "votable"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.integer  "votable_id"
+    t.string   "votable_type"
     t.boolean  "positive"
     t.datetime "created_at"
     t.datetime "updated_at"
