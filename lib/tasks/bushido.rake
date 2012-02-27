@@ -1,6 +1,6 @@
 namespace :bushido do
   desc "Run the initial setup for a Busido app. Copies config files and seeds db."
-  task :install do
+  task :install => :environment do
     user = User.new
     user.first_name = "Joe"
     user.last_name  = "User"
