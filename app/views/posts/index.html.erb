@@ -11,8 +11,15 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.points %></td>
-    <td><%= link_to post.title, post %> (<%= post.url %>) [<%= post.poster %>]
-    <% if post.posted_by?(current_user) %>
+    <td>
+      <% if current_target %>
+      <% unless post.already_voted?(current_target) || post.created_by?(current_target) %>
+      <%= link_to "UP", post_votes_path(post, :positive => true), :method => :post %>
+      <% end %>
+      <% end %>
+
+      <%= link_to post.title, post %> <% if !post.url.blank? %>(<%= post.url %>)<% end %> [<%= post.poster %>]
+    <% if post.posted_by?(current_target) %>
       <% if post.editable? %>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <% end %>

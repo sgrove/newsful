@@ -1,2 +1,10 @@
-(<%= pluralize comment.points, "point" %>)  <%= comment.author %> <%= time_ago_in_words(comment.created_at) %> ago<br />
+(<%= pluralize comment.points, "point" %>)
+<% if current_target %>
+  <% unless comment.already_voted?(current_target) || comment.created_by?(current_target) %>
+    <%= link_to "UP", comment_votes_path(comment, :positive => true), :method => :post %> | <%= link_to "DOWN", comment_votes_path(comment, :positive => false), :method => :post %>
+  <% end %>
+<% end %>
+<%= comment.author %> <%= time_ago_in_words(comment.created_at) %> ago<br />
+<p>
 <%= comment.body %>
+</p>
