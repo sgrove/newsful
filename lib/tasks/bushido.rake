@@ -5,18 +5,23 @@ namespace :bushido do
     user.first_name = "Joe"
     user.last_name  = "User"
     user.email      = "joe.user@kanda.me"
-    user.save
-    
-    post = Post.new
-    post.title  = "First prost"
-    post.url    = "http://kandan.me/"
-    post.poster_id = user.id
-    post.save
+    user.password   = "password"
+    user.save!
 
-    comment = post.comments.new
-    comment.author_id = user.id
-    comment.body = "This is totally awesome you guys!"
-    comment.points = rand(10)
-    comment.save
+    5.times do
+      post = Post.new
+      post.title  = "First prost"
+      post.url    = "http://kandan.me/"
+      post.poster = user
+      post.points = rand(20)
+      post.save!
+
+      comment = post.comments.new
+      comment.author = user
+      comment.body = "This is totally awesome you guys!"
+      comment.points = rand(10)
+      comment.save!
+    end
   end
 end
+
