@@ -40,14 +40,25 @@ class VotesController < ApplicationController
   # POST /votes
   # POST /votes.json
   def create
-    @vote = Vote.new(params[:vote])
+    @votable = Comment.find(params[:comment_id]) if params[:comment_id]
+    @votable = Post.find(params[:post_id]) if params[:post_id]
 
+    return render :status => 404 if @votable.nil?
+
+    @vote          = Vote.new
+    @vote.votable  = @votable
+    @vote.voter    = current_target
+    @vote.positive = params[:positive]
+
+    puts @vote.valid?
+    puts @vote.errors.inspect
+    
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
+        format.html { redirect_to :back, notice: 'Vote was successfully created.' }
         format.json { render json: @vote, status: :created, location: @vote }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to :back, notice: 'Vote was not successfully created.' }
         format.json { render json: @vote.errors, status: :unprocessable_entity }
       end
     end

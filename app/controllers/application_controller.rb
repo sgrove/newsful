@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_filter :authenticate_user_or_admin!, :only => [:new, :destroy, :create, :update]
+
   protect_from_forgery
 
   def authenticate_user_or_admin!
@@ -11,5 +13,9 @@ class ApplicationController < ActionController::Base
     else
       authenticate_user!
     end
+  end
+
+  def current_target
+    current_user || current_admin
   end
 end

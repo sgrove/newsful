@@ -44,13 +44,15 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
+    @comment.author = current_target
 
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment.post, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { render action: "new" }
+        # TODO: Make this more friendly, don't lose the comment on redirect
+        format.html { redirect_to :back, notice: "Comment was not successfully created." }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
