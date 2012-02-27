@@ -1,0 +1,15 @@
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+body{
+	background-color:#ddd !important;
+}
+#main{
+	background:#fff;
+	padding:20px;
+	//@include border-radius(3px);
+}

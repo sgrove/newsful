@@ -1,0 +1,17 @@
+/* line 1, ../../app/assets/stylesheets/base.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 8, ../../app/assets/stylesheets/base.scss */
+body {
+  background-color: #ddd !important;
+}
+
+/* line 11, ../../app/assets/stylesheets/base.scss */
+#main {
+  background: #fff;
+  padding: 20px;
+}
