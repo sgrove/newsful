@@ -1,15 +1,12 @@
 class User < ActiveRecord::Base
-  has_many :posts, :as => :owner
-  has_many :votes, :as => :voter
+  # This sets up the common user/admin relations (post, votes),
+  # validations, and methods
+  include Newsful::UserBehavior
+
   has_many :comments, :as => :author
 
   validates_presence_of :email
-  validates_presence_of :first_name
-  validates_presence_of :last_name
 
-  before_validation Proc.new { |user| user.points ||= 1 }
-
-  def to_s
-    "#{first_name} #{last_name}"
-  end
+  devise :database_authenticatable, :registerable, :recoverable,
+         :rememberable, :trackable, :validatable
 end

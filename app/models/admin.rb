@@ -1,11 +1,13 @@
 class Admin < ActiveRecord::Base
-  has_many :posts, :as => :owner
-  has_many :votes, :as => :voter
+  # This sets up the common user/admin relations (post, votes),
+  # validations, and methods
+  include Newsful::UserBehavior
+
   has_many :comments, :as => :author
 
   validates_presence_of :ido_id
 
-  before_validation Proc.new { |user| user.points ||= 1 }
+  devise :bushido_authenticatable
 
   def bushido_extra_attributes(extra_attributes)
     self.first_name = extra_attributes["first_name"].to_s
@@ -14,9 +16,6 @@ class Admin < ActiveRecord::Base
     self.locale     = extra_attributes["locale"]
     self.timezone   = extra_attributes["timezone"]
   end
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :bushido_authenticatable
   
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :ido_id, :first_name, :last_name
