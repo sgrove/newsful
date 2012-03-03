@@ -30,7 +30,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Testing and debug
 gem "rspec-rails", :group => "development"
-gem "factory_girl_rails", :group => "development"
 gem "awesome_print", :group => "development"
 
 group :test do
