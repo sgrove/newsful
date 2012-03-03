@@ -22,6 +22,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# prevent slowdown from loading Bootstrap
+gem 'rails-dev-tweaks', '~> 0.6.1'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

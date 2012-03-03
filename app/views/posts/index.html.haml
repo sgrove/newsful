@@ -1,15 +1,11 @@
-%h1 Listing posts
 - @posts.each_with_index do |post, index|
-  .row.post
-    .span1
-      %h4=index+1
-    .span1
-      - if current_target
-        - unless post.already_voted?(current_target) || post.created_by?(current_target)
-          = link_to "UP", post_votes_path(post, :positive => true), :method => :post
-      - else
-        = link_to "UP", post_votes_path(post, :positive => true), :method => :post
-    .span8
+  .post.clearfix
+    .btn-group.post-index
+      %span.btn.post-number
+        =index+1
+      - if (current_target && !(post.already_voted?(current_target) || post.created_by?(current_target))) || !current_target
+        = link_to "⬆", post_votes_path(post, :positive => true), :method => :post, :class => "btn post-upvote", :title => "Upvote"
+    .post-content
       %h4
         = link_to post.title, post
         - if !post.url.blank?
@@ -17,9 +13,8 @@
             (#{post.url})
       %p
         #{post.points} points by #{link_to post.poster, post.poster}, #{time_ago_in_words(post.created_at)} ago
-    .span2
-      - if post.posted_by?(current_target)
-        - if post.editable?
-          = link_to 'Edit', edit_post_path(post)
-        = link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete
-= link_to 'Submit', new_post_path
+      .post-admin
+        - if post.posted_by?(current_target)
+          - if post.editable?
+            = link_to 'Edit', edit_post_path(post)
+          = link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete

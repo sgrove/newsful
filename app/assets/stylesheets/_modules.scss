@@ -1,6 +1,73 @@
+@import "compass";
+@import "mixins";
+
+.navbar{
+
+	@include border-radius(0 0 3px 3px);
+	@include background-image(linear-gradient(top, #eee 0%,#ddd 100%));
+	border:1px solid #aaa;
+	border-top:none;
+	@include box-shadow(0 1px 2px black(0.25));
+	.logo{
+		float:left;
+		font-size:16px;
+		padding:0 15px;
+	}
+	ul.nav{
+		float:right;
+		margin:0;
+		li{
+			float:left;
+			a{
+				color:#777;
+				margin:0;
+				display:block;
+				height:36px;
+				line-height:36px;
+				padding:0 15px;
+				border-left:1px solid white(0.8);
+				@include box-shadow(inset 1px 0 0 black(0.1));
+				@include border-radius(0px);
+				@include letterpress(0.5);
+				&:hover{
+					background:#fff;
+					color:#777;
+				}
+				&:active{
+					background:#ccc;
+					color:#777;
+				}
+			}
+		}
+	}
+}
 .post{
-	.post-url{
-		color:#aaa;
-		font-weight:normal;
-	}	
+	border-bottom: 1px #ccc dotted;
+	padding:20px 0 10px 0;
+	&:first-child{
+		padding-top:0;
+	}
+	.post-index{
+		margin-top:5px;
+		float:left;
+		margin-right:20px;
+		.post-number{
+			background:#fff;
+			cursor:text;
+			font-weight:bold;
+			width:50px;
+			&:hover, &:active{
+				background:#fff;
+				background-image:none;
+			}
+		}
+	}
+	.post-content{
+		float:left;
+		.post-url{
+			color:#aaa;
+			font-weight:normal;
+		}
+	}
+	
 }

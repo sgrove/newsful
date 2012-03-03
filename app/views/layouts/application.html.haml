@@ -7,29 +7,21 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
-    %p
-    .container#main
-      .navbar
-        .user-nav= link_to "Newsful", posts_url
-        .brand
-        .user-nav
-          - if admin_signed_in?
-            = link_to current_admin.email, edit_user_registration_path
-            = link_to "Logout", destroy_admin_session_path, :method => :delete
-          - elsif user_signed_in?
-            = link_to current_user.email, edit_user_registration_path
-            = link_to "Logout", destroy_user_session_path, :method => :delete
-          - else
-            = link_to "Login", new_user_session_path
-            = link_to "Sign up", new_user_registration_path
-            = link_to "admin", new_admin_session_path
-      .ticket-nav
-      .search-wrapper
-      .main
-        = yield
-      .sidebar
-        .content
-          Sidebar
-      .container-footer
-    .footer
-      Footer
+    .navbar.container
+      %h1.logo
+        = link_to "Newsful", posts_url
+      %ul.nav.nav-pills
+        - if admin_signed_in?
+          %li= link_to current_admin.email, edit_user_registration_path
+          %li= link_to "Logout", destroy_admin_session_path, :method => :delete
+        - elsif user_signed_in?
+          %li= link_to current_user.email, edit_user_registration_path
+          %li= link_to "Logout", destroy_user_session_path, :method => :delete
+        - else
+          %li= link_to "Login", new_user_session_path
+          %li= link_to "Sign up", new_user_registration_path
+          %li= link_to "Admin", new_admin_session_path
+        %li= link_to 'Submit', new_post_path
+    #main.container
+      = yield
+    .footer.container
