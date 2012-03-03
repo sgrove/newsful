@@ -1,8 +1,9 @@
 - @posts.each_with_index do |post, index|
   .post.clearfix
-    .btn-group.post-index
-      %span.btn.post-number
-        =index+1
+    .post-index= index+1
+    .btn-group.post-vote
+      %span.btn.post-points
+        =post.points
       - if (current_target && !(post.already_voted?(current_target) || post.created_by?(current_target))) || !current_target
         = link_to "⬆", post_votes_path(post, :positive => true), :method => :post, :class => "btn post-upvote", :title => "Upvote"
     .post-content
@@ -11,8 +12,8 @@
         - if !post.url.blank?
           %span.post-url
             (#{post.url})
-      %p
-        #{post.points} points by #{link_to post.poster, post.poster}, #{time_ago_in_words(post.created_at)} ago
+      %p.post-byline
+        by #{link_to post.poster, post.poster}, #{time_ago_in_words(post.created_at)} ago
       .post-admin
         - if post.posted_by?(current_target)
           - if post.editable?
