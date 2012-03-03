@@ -10,7 +10,7 @@
       %h4
         = link_to post.title, post
         - if !post.url.blank?
-          %span.post-url
+          %span.post-domain
             (#{post.url})
       %p.post-byline
         by #{link_to post.poster, post.poster}, #{time_ago_in_words(post.created_at)} ago
