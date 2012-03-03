@@ -8,12 +8,12 @@
         = link_to "⬆", post_votes_path(post, :positive => true), :method => :post, :class => "btn post-upvote", :title => "Upvote"
     .post-content
       %h4
-        = link_to post.title, post
+        = link_to post.title, post.url
         - if !post.url.blank?
           %span.post-domain
-            (#{post.url})
+            (#{post.url.split('/')[2]})
       %p.post-byline
-        by #{link_to post.poster, post.poster}, #{time_ago_in_words(post.created_at)} ago
+        by #{link_to post.poster, post.poster}, #{time_ago_in_words(post.created_at)} ago, #{link_to "#{post.comments.count} Comments", post}
       .post-admin
         - if post.posted_by?(current_target)
           - if post.editable?
