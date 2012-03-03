@@ -6,15 +6,19 @@ module Newsful
         has_many :posts, :as => :owner
         has_many :votes, :as => :voter
 
-        validates_presence_of :first_name
-        validates_presence_of :last_name
+        # If you want more complete user profiles
+        # validates_presence_of :first_name
+        # validates_presence_of :last_name
 
-        before_validation Proc.new { |user| user.points ||= 1 }
+        attr_accessible :email, :password
+
+        before_validation Proc.new { |user| user.points ||= 1 }        
       end
     end
 
     def to_s
-      "#{first_name} #{last_name}"
+      return "#{first_name} #{last_name}" unless first_name.nil?
+      return username
     end
   end
 end

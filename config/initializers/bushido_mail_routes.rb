@@ -1,1 +1,0 @@
-require './lib/bushido/mail_routes.rb'

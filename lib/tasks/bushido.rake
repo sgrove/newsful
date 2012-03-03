@@ -4,7 +4,8 @@ namespace :bushido do
     user = User.new
     user.first_name = "Joe"
     user.last_name  = "User"
-    user.email      = "joe.user@kanda.me"
+    user.email      = "joe.user@kandan.me"
+    user.username   = "joe_the_user"
     user.password   = "password"
     user.save!
 

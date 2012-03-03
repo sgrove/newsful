@@ -2,9 +2,13 @@ class DeviseCreateAdmins < ActiveRecord::Migration
   def change
     create_table(:admins) do |t|
       t.bushido_authenticatable
+      t.database_authenticatable
+      t.recoverable
+      t.rememberable
       t.trackable
 
       t.string  :email
+      t.string  :username
       t.string  :ido_id
       t.string  :first_name
       t.string  :last_name

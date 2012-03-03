@@ -1,12 +1,14 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
-      t.database_authenticatable :null => false
+      t.bushido_authenticatable
+      t.database_authenticatable
       t.recoverable
       t.rememberable
       t.trackable
 
       t.string  :email
+      t.string  :username
       t.string  :ido_id
       t.string  :first_name
       t.string  :last_name
