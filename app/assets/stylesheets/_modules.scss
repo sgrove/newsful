@@ -11,7 +11,11 @@
 	.logo{
 		float:left;
 		font-size:16px;
-		padding:0 15px;
+		margin:8px;
+		background:url("/assets/newsful-logo.png") no-repeat;
+		height:18px;
+		width:100px;
+		@include hide-text;
 	}
 	ul.nav{
 		float:right;
@@ -56,6 +60,7 @@
 		font-weight:bold;
 		line-height:28px;
 		height:28px;
+		width:30px;
 		&:after{
 			content:".";
 		}
@@ -75,12 +80,13 @@
 			}
 		}
 	}
+	.post-domain{
+		font-size:12px;
+		color:#aaa;
+		font-weight:normal;
+	}
 	.post-content{
 		float:left;
-		.post-url{
-			color:#aaa;
-			font-weight:normal;
-		}
 	}
 	
 }
