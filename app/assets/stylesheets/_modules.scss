@@ -2,13 +2,14 @@
 @import "mixins";
 
 .navbar{
-
+	width:980px;
+	margin:0 auto 20px auto;
 	@include border-radius(0 0 3px 3px);
 	@include background-image(linear-gradient(top, #eee 0%,#ddd 100%));
 	border:1px solid #aaa;
 	border-top:none;
 	@include box-shadow(0 1px 2px black(0.25));
-	.logo{
+	.logo a{
 		float:left;
 		font-size:16px;
 		margin:8px;
@@ -17,8 +18,17 @@
 		width:100px;
 		@include hide-text;
 	}
-	ul.nav{
+	#primary-nav{
+		float:left;
+		li:last-child a{
+			border-right:1px solid white(0.8);
+			@include box-shadow(inset 1px 0 0 black(0.1), inset -1px 0 0 black(0.1));
+		}
+	}
+	#secondary-nav{
 		float:right;
+	}
+	ul.nav{
 		margin:0;
 		li{
 			float:left;
@@ -73,7 +83,7 @@
 			background:#fff;
 			cursor:text;
 			font-weight:bold;
-			width:50px;
+			width:30px;
 			&:hover, &:active{
 				background:#fff;
 				background-image:none;

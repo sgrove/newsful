@@ -8,10 +8,15 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{:rel=>"shortcut icon", :href=>"/assets/favicon.ico"}    
   %body
-    .navbar.container
+    .navbar.clearfix
       %h1.logo
         = link_to "Newsful", posts_url
-      %ul.nav.nav-pills
+      %ul#primary-nav.nav.nav-pills
+        %li= link_to 'Top', posts_url
+        %li= link_to 'New', '#'
+        %li= link_to 'Submit', new_post_path
+        
+      %ul#secondary-nav.nav.nav-pills
         - if admin_signed_in?
           %li= link_to current_admin.email, edit_user_registration_path
           %li= link_to "Logout", destroy_admin_session_path, :method => :delete
@@ -22,7 +27,6 @@
           %li= link_to "Login", new_user_session_path
           %li= link_to "Sign up", new_user_registration_path
           %li= link_to "Admin", new_admin_session_path
-        %li= link_to 'Submit', new_post_path
     #main.container
       = yield
     .footer.container
