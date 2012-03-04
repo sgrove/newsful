@@ -9,14 +9,24 @@
 	border:1px solid #aaa;
 	border-top:none;
 	@include box-shadow(0 1px 2px black(0.25));
-	.logo a{
-		float:left;
-		font-size:16px;
-		margin:8px;
-		background:url("/assets/newsful-logo.png") no-repeat;
-		height:18px;
-		width:94px;
-		@include hide-text;
+	.logo{
+		margin:0;
+		a{
+			float:left;
+			font-size:16px;
+			background:url("/assets/newsful-logo.png") no-repeat 9px 9px;
+			height:18px;
+			padding:9px;
+			width:94px;
+			@include hide-text;
+			@include border-radius(0 0 0 3px);
+			&:hover{
+				background-color:#fff;
+			}
+			&:active{
+				background-color:#ccc;
+			}
+		}
 	}
 	#primary-nav{
 		float:left;
@@ -50,6 +60,9 @@
 				&:active{
 					background:#ccc;
 					color:#777;
+				}
+				&:last-child{
+					@include border-radius(0 0 3px 0);
 				}
 				i{
 					margin-top:1px;
