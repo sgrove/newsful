@@ -12,21 +12,21 @@
       %h1.logo
         = link_to "Newsful", posts_url
       %ul#primary-nav.nav.nav-pills
-        %li= link_to 'Top', posts_url
-        %li= link_to 'New', '#'
-        %li= link_to 'Submit', new_post_path
+        %li= link_to raw('<i class="icon-star"></i>Top'), posts_url
+        %li= link_to raw('<i class="icon-inbox"></i>New'), '#'
+        %li= link_to raw('<i class="icon-pencil"></i>Submit'), new_post_path
         
       %ul#secondary-nav.nav.nav-pills
         - if admin_signed_in?
           %li= link_to current_admin.email, edit_user_registration_path
-          %li= link_to "Logout", destroy_admin_session_path, :method => :delete
+          %li= link_to "Log Out", destroy_admin_session_path, :method => :delete
+          %li= link_to "Admin", new_admin_session_path
         - elsif user_signed_in?
           %li= link_to current_user.email, edit_user_registration_path
-          %li= link_to "Logout", destroy_user_session_path, :method => :delete
+          %li= link_to "Log Out", destroy_user_session_path, :method => :delete
         - else
-          %li= link_to "Login", new_user_session_path
+          %li= link_to "Log In", new_user_session_path
           %li= link_to "Sign up", new_user_registration_path
-          %li= link_to "Admin", new_admin_session_path
     #main.container
       = yield
     .footer.container

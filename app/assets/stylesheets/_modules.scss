@@ -15,7 +15,7 @@
 		margin:8px;
 		background:url("/assets/newsful-logo.png") no-repeat;
 		height:18px;
-		width:100px;
+		width:94px;
 		@include hide-text;
 	}
 	#primary-nav{
@@ -50,6 +50,12 @@
 				&:active{
 					background:#ccc;
 					color:#777;
+				}
+				i{
+					margin-top:1px;
+					margin-right:4px;
+					display:inline-block;
+					opacity:0.8;
 				}
 			}
 		}
